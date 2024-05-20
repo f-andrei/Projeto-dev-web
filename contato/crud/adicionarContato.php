@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <?php 
-                require "conectaDb.php";
+                require "../../conectaDb.php";
                 $nome = $_POST["nome"];
                 $sobrenome = $_POST["sobrenome"];
                 $telefone = $_POST["telefone"];
@@ -25,8 +25,7 @@
                     VALUES ('$nome', '$sobrenome', '$telefone', '$tipo', '$empresa', '$email')";
                     $banco->query($sql);
                     if ($banco->affected_rows >= 1) {
-                        //echo "<p> Contato $nome cadastrado com sucesso</p>";
-                        include "listarContatos.php";
+                        include "../listarContatos.php";
                     }
                 }
                 $banco->close();

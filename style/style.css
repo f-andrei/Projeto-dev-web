@@ -1,0 +1,43 @@
+
+.create-operation {
+    background-color: #004b8d;
+    color: #ffffff;
+}
+
+
+.update-operation {
+    background-color: #5d9732;
+    color: #ffffff;
+}
+
+
+.delete-operation {
+    background-color: #0069aa;
+    color: #ffffff;
+}
+
+
+.read-operation {
+    background-color: #0081c6;
+    color: #ffffff;
+}
+
+.navbar-contato {
+    background-color: #004b8d !important;
+    color: #ffffff !important;
+}
+
+.navbar-email {
+    background-color: #5d9732 !important;
+    color: #ffffff !important;
+}
+
+.navbar-anotacao {
+    background-color: #0069aa !important;
+    color: #ffffff !important;
+}
+
+body.EnviaEmails {
+    background-color: #5d9732 !important;
+    color: #ffffff !important;
+}

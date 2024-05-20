@@ -6,10 +6,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mx-auto">
-          <a class="nav-link" href="index.php">Home</a>
-          <a class="nav-link" href="contato/contato.php">Contatos</a>
-          <a class="nav-link" href="email/email.php">Email</a>
-          <a class="nav-link" href="anotacao/anotacao.php">Anotações</a>
+          <a class="nav-link" href="/conteudo/Projeto-dev-web/index.php">Home</a>
+          <a class="nav-link" href="/conteudo/Projeto-dev-web/contato/contato.php">Adicionar contatos</a>
+          <a class="nav-link" href="/conteudo/Projeto-dev-web/contato/listarContatos.php">Meus contatos</a>
+          <a class="nav-link" href="/conteudo/Projeto-dev-web/contato/editarContatos.php">Editar contatos</a>
+          <a class="nav-link" href="/conteudo/Projeto-dev-web/contato/crud/deletaContato.php">Deletar contatos</a>
         </div>
       </div>
     </div>
