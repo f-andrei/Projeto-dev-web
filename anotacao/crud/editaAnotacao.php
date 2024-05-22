@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <?php
-                function handleEmptyField($field, $existingValue) {
+                function checaCampoVazio($field, $existingValue) {
                     return isset($field) && !empty($field) ? $field : $existingValue;
                 }
 
@@ -25,9 +25,9 @@
                     if ($resultado) {
                         $dadosExistentes = mysqli_fetch_assoc($resultado);
 
-                        $nome = handleEmptyField($_POST["nome"], $dadosExistentes['nome']);
-                        $conteudo = handleEmptyField($_POST["conteudo"], $dadosExistentes['conteudo']);
-                        $links_uteis = handleEmptyField($_POST["links_uteis"], $dadosExistentes['links_uteis']);
+                        $nome = checaCampoVazio($_POST["nome"], $dadosExistentes['nome']);
+                        $conteudo = checaCampoVazio($_POST["conteudo"], $dadosExistentes['conteudo']);
+                        $links_uteis = checaCampoVazio($_POST["links_uteis"], $dadosExistentes['links_uteis']);
                         
                         $sql = "UPDATE anotacao 
                                 SET nome='$nome', conteudo='$conteudo', links_uteis='$links_uteis'

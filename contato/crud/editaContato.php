@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <?php
-                function handleEmptyField($field, $existingValue) {
+                function checaCampoVazio($field, $existingValue) {
                     return isset($field) && !empty($field) ? $field : $existingValue;
                 }
 
@@ -25,14 +25,14 @@
                     if ($resultado) {
                         $dadosExistentes = mysqli_fetch_assoc($resultado);
 
-                        $nome = handleEmptyField($_POST["nome"], $dadosExistentes['nome']);
-                        $sobrenome = handleEmptyField($_POST["sobrenome"], $dadosExistentes['sobrenome']);
-                        $telefone = handleEmptyField($_POST["telefone"], $dadosExistentes['telefone']);
+                        $nome = checaCampoVazio($_POST["nome"], $dadosExistentes['nome']);
+                        $sobrenome = checaCampoVazio($_POST["sobrenome"], $dadosExistentes['sobrenome']);
+                        $telefone = checaCampoVazio($_POST["telefone"], $dadosExistentes['telefone']);
                         
                         $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : $dadosExistentes['tipo'];
                         
-                        $empresa = handleEmptyField($_POST["empresa"], $dadosExistentes['empresa']);
-                        $email = handleEmptyField($_POST["email"], $dadosExistentes['email']);
+                        $empresa = checaCampoVazio($_POST["empresa"], $dadosExistentes['empresa']);
+                        $email = checaCampoVazio($_POST["email"], $dadosExistentes['email']);
 
                         $sql = "UPDATE contato 
                                 SET nome='$nome', sobrenome='$sobrenome', telefone='$telefone', 
