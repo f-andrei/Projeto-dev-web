@@ -6,11 +6,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mx-auto">
-          <a class="nav-link" href="index.php">Home</a>
-          <a class="nav-link" href="contato/contato.php">Contatos</a>
-          <a class="nav-link" href="email/email.php">Email</a>
-          <a class="nav-link" href="anotacao/anotacao.php">Anotações</a>
-          <a class="nav-link" href="relatorio/relatorio.php">Relatório</a>
+          <a class="nav-link" href="/Projeto-dev-web/index.php">Home</a>
+          <a class="nav-link" href="/Projeto-dev-web/contato/contato.php">Contatos</a>
+          <a class="nav-link" href="/Projeto-dev-web/email/email.php">Email</a>
+          <a class="nav-link" href="/Projeto-dev-web/anotacao/anotacao.php">Anotações</a>
+          <a class="nav-link" href="/Projeto-dev-web/relatorio/relatorio.php">Relatório</a>
         </div>
       </div>
     </div>

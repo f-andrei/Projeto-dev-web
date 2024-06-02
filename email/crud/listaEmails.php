@@ -19,18 +19,21 @@
                 <div class="text-center read-operation">
                     <div>
                         <?php
-                            $email = $_POST["email"];
-                            $tipo = $_POST["tipo"];
                             require '../../conectaDb.php';
+                            $email = $_POST["email"];
+                            $select = "SELECT id FROM contato WHERE email = '$email'";
+                            $id_query = mysqli_query($banco, $select);
+                            $id = $id_query->fetch_row()[0];
+                            $tipo = $_POST["tipo"];
                             if ($tipo == "Listar enviados") {
-                                $select = "SELECT id, para_email, assunto, conteudo FROM email WHERE de_email = '$email'";
+                                $select = "SELECT id, destinatario_contato_id, assunto, conteudo FROM email WHERE remetente_contato_id = '$id'";
                                 $tipo_envio = "Para";
-                                $chave = "para_email";
+                                $chave = "destinatario_contato_id";
                             }
                             if ($tipo == "Listar recebidos") {
-                                $select = "SELECT id, de_email, assunto, conteudo FROM email WHERE para_email = '$email'";
+                                $select = "SELECT id, remetente_contato_id, assunto, conteudo FROM email WHERE destinatario_contato_id = '$id'";
                                 $tipo_envio = "De";
-                                $chave = "de_email";
+                                $chave = "remetente_contato_id";
                             }
 
                             
@@ -49,9 +52,13 @@
                                 echo '<tbody>';
                                 while ($row = mysqli_fetch_assoc($emails)) {
                                     $id = htmlspecialchars($row['id']);
-                                    $email = htmlspecialchars($row[$chave]);
+                                    $contato_id = htmlspecialchars($row[$chave]);
                                     $assunto = htmlspecialchars($row['assunto']);
                                     $conteudo = htmlspecialchars($row['conteudo']);
+
+                                    $select = "SELECT email FROM contato WHERE id = '$contato_id'";
+                                    $email_query = mysqli_query($banco, $select);
+                                    $email = $email_query->fetch_row()[0];
                                     echo '<tr>';
                                     echo "<td>$email</td>";
                                     echo "<td>$assunto</td>";

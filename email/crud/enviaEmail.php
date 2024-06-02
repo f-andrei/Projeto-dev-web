@@ -12,17 +12,17 @@
     ?>
     <?php
         require '../../conectaDb.php';
-        $de_email = $_POST["de_email"];
-        $para_email = $_POST["para_email"];
+        $remetente_id = $_POST["remetente"];
+        $destinatario_id = $_POST["destinatario"];
         $assunto = $_POST["assunto"];
         $conteudo = $_POST["conteudo"];
 
-        if (empty($para_email) || empty($conteudo)) {
+        if (empty($destinatario_id) || empty($conteudo)) {
             echo "Preencha seu email, destinatário, e conteúdo do email.";
         } else {
             $sql = "INSERT INTO email 
-            (de_email, para_email, assunto, conteudo) 
-            VALUES ('$de_email', '$para_email', '$assunto', '$conteudo')";
+            (remetente_contato_id, destinatario_contato_id, assunto, conteudo)
+            VALUES ('$remetente_id', '$destinatario_id', '$assunto', '$conteudo')";
             $banco->query($sql);
             if ($banco->affected_rows >= 1) {
                 header("Location: ../listarEnviados.php");
