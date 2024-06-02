@@ -10,11 +10,14 @@ CREATE TABLE contato(
 
 CREATE TABLE email(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    de_email VARCHAR(255) NOT NULL,
-    para_email VARCHAR(255) NOT NULL,
     assunto VARCHAR(255) NOT NULL,
-    conteudo TEXT NOT NULL
+    conteudo TEXT NOT NULL,
+    remetente_contato_id INT,
+    destinatario_contato_id INT,
+    FOREIGN KEY (remetente_contato_id) REFERENCES contato(id),
+    FOREIGN KEY (destinatario_contato_id) REFERENCES contato(id)
 );
+
 
 CREATE TABLE anotacao(
     id INT AUTO_INCREMENT PRIMARY KEY,
